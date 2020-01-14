@@ -10,3 +10,5 @@ Required fields are project name and a _ref to a parent project if it is to be a
 \_previous is a special keyword for the parent project field and if used, it will parent itself to the previously created project.
 
 Rally limits project hierarchy to 10 levels, so don't go too crazy
+
+Modify rally-v2.0.cfg to include your user credentials and workspace name.  In this script, the project setting is ignored.
