@@ -1,14 +1,25 @@
 # CreateProjects
 Pyral based python script to quickly create projects out of a CSV formatted txt file
 
-project_list.txt must exist in the same directory as the script
+## Installation
+Install Python 3.6 or higher
+Install pyral with the following command:
+`pip install pyral`
 
-The first row is a header
 
-Required fields are project name and a _ref to a parent project if it is to be a child project
+## Configuration
+Modify rally-v2.0.cfg to include your user credentials and workspace name.  With this script, the project setting is ignored.
 
-\_previous is a special keyword for the parent project field and if used, it will parent itself to the previously created project.
+project_list.txt is a CSV file and must exist in the same directory as the script
 
-Rally limits project hierarchy to 10 levels, so don't go too crazy
+### project_list.txt Structure
+The first row is a header and must be present in the file
 
-Modify rally-v2.0.cfg to include your user credentials and workspace name.  In this script, the project setting is ignored.
+Project name is always required.  
+
+Project parent is optional.  If you do not specify a project parent, the project will be created at the root of your hierarchy.  If you wish to create this project under another project, a `_ref` to a parent project needs to be specified in this field.
+
+`_previous` is a special keyword for the parent project field and if used, it will parent itself to the previously created project.  Rally limits project hierarchy to 10 levels, so don't go too crazy
+
+## Execution
+`python create_projects.py`
